@@ -21,7 +21,19 @@ public class UserControl
         loggedInUser = null;
     }
     
+    public boolean isLoggedInUserAutorisedTo(String action){
+        return loggedInUser.authorisedTo(action);
+    }
+    
     public boolean createUser(String Role, String name, String password){
+        if(Role.equals("Employee")){
+            users.add(new Employee("Name","Password"));
+        }else if(Role.equals("Acountant")){
+            users.add(new Accountant("Name","Password"));
+        }else if(Role.equals("Member")){
+            users.add(new Member("Name","Password"));
+        }
+
         users.add(new Employee("Name","Password"));
         return true;
     }
@@ -36,7 +48,7 @@ public class UserControl
         return false;
     }
     
-    public boolean Login(String name, String password){
+    public boolean login(String name, String password){
         for(User user :  users){
             if (user.getName().equals(name) && user.getPassword().equals(password)){
                 loggedInUser = user;
@@ -46,7 +58,7 @@ public class UserControl
         return false;
     }
     
-    public boolean Logout(){
+    public boolean logout(){
         loggedInUser = null;
         return true;
     }
@@ -59,21 +71,25 @@ public class UserControl
         return selectedUser;
     }
     
-    public String GetSelectedUserName(){
+    public String getSelectedUserName(){
         return selectedUser.getName();
     }
     
-    public boolean SetSelectedUserName(String name){
+    public String getLoggedInUserName(){
+        return loggedInUser.getName();
+    }
+    
+    public boolean setSelectedUserName(String name){
         selectedUser.setName(name);
         return true;
     }
     
-    public boolean SetSelectedUserPassword(String password){
+    public boolean setSelectedUserPassword(String password){
         selectedUser.setPassword(password);
         return true;
     }
     
-    public Boolean DeleteSelected(){
+    public Boolean deleteSelected(){
         return users.remove(selectedUser);
     }
     
