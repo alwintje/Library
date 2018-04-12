@@ -1,4 +1,4 @@
-
+import java.util.UUID;
 /**
  * Write a description of class Item here.
  *
@@ -18,8 +18,13 @@ public abstract class Item
     public Item(String title, Category category)
     {
         this.title = title;
-        id = "id";
+        this.id = generateString();
         this.category = category;
+    }
+    
+    private static String generateString() {
+        String uuid = UUID.randomUUID().toString();
+        return uuid;
     }
 
     public void setTitle(String title){
@@ -28,6 +33,14 @@ public abstract class Item
     
     public void setCategory(Category category){
         this.category = category;
+    }
+    
+    public String getTitle(){
+        return title;
+    }
+    
+    public String getId(){
+        return id;
     }
     
     public Category getCategory(){
