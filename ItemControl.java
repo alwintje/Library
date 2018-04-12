@@ -10,6 +10,8 @@ public class ItemControl
     private ArrayList<Borrow> borrowed;
     private ArrayList<Reservation> reservations;
     
+    private CategoryFactory categoryFactory;
+    
     private String selectedType;
     private Item selectedItem;
     /**
@@ -22,6 +24,8 @@ public class ItemControl
         penalties = new ArrayList<Borrow>();
         borrowed = new ArrayList<Borrow>();
         reservations = new ArrayList<Reservation>();
+        
+        categoryFactory = new CategoryFactory();
     }
 
     public ArrayList<Borrow> getAllPenalties(){
@@ -80,8 +84,8 @@ public class ItemControl
         return false;
     }
     
-    public boolean setCategory(String title){
-        item.setCategory();
+    public boolean setCategory(String categorie){
+        selectedItem.setCategory(categoryFactory.getCategorie(categorie));
     }
     
     private String getBorrowList(){
