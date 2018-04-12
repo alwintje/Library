@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Write a description of class employee here.
  *
@@ -7,34 +7,25 @@
  */
 public class Employee extends User
 {
-
+    String actions[];
+    
     /**
      * Constructor for objects of class employee
      */
     public Employee(String name, String password)
     {
         super(name, password);
+        
+        actions = new String[] {"depositItem" , "borrowitem" , "reservateitem" , "getpenalty" , "addUser" , "deleteUser" , "changeUser" , "addItem" , "deleteitem" , "changeItem"};
     }
 
-    public void createBook(String title, String author, String publisher, String categorie)
-    {
-        
+    public boolean authorisedTo(String action){
+       for (String pointer: actions) {           
+        if(pointer == action){
+            return true;
+        }
+       }
+       return false;
     }
-    
-    public void createCD(String title, String singer, String categorie)
-    {
-        
-    }
-    
-    public void createDvD(String title, String director, String categorie)
-    {
-        
-    }
-    
-    public void createUser(String title, String password)
-    {
-        
-    }
-
     
 }
