@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="71.0" prefWidth="960.0" style="-fx-background-color: #b2d7ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home" textAlignment="CENTER" wrappingWidth="960.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Button layoutX="387.0" layoutY="206.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Items inleveren" />
+      <Button layoutX="387.0" layoutY="255.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Items lenen" />
+      <Button layoutX="387.0" layoutY="300.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Reserveren" />
+   </children>
+</AnchorPane>
