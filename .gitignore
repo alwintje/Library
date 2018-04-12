@@ -1,1 +1,5 @@
 .idea
+appliction/*
+!appliction/lib
+!appliction/src
+!appliction/build.xml

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir=".." default="build" name="JavaCS">
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <property name="lib.dir" value="lib"/>
+
+
+
+    <path id="JavaCS.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/junit-4.12.jar"/>
+        <pathelement location="lib/ant-junit.jar"/>
+    </path>
+
+    <path id="testpath">
+        <pathelement location="bin"/>
+        <fileset dir="lib">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects" />
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="JavaCS.classpath"/>
+        </javac>
+    </target>
+
+    <target name="jar"/>
+
+    <target name="run" depends="build" >
+        <java classname="nl.ogo.Base" fork="true">
+            <classpath>
+                <pathelement location="bin"/>
+                <fileset dir="lib">
+                    <include name="**/*.jar" />
+                </fileset>
+            </classpath>
+        </java>
+    </target>
+
+    <!-- START TESTS FOR SORTING -->
+    <!--<target name="BubbleSortTest" depends="build" >-->
+        <!--<mkdir dir="${junit.output.dir}"/>-->
+        <!--<junit fork="yes" printsummary="withOutAndErr">-->
+            <!--<formatter type="xml"/>-->
+            <!--<test name="test.nl.ad.sort.BubbleSortTest" todir="${junit.output.dir}"/>-->
+            <!--<classpath refid="testpath"/>-->
+        <!--</junit>-->
+    <!--</target>-->
+    <!-- END TESTS FOR SORTING -->
+
+
+
+
+    <!-- GENERATE ALL TEST REPORTS -->
+    <!--<target name="Generate reports" description="Run all tests" depends="build, BinarySearchTest, SequentialSearchTest, BubbleSortTest, InsertionSortTest, QuickSortTest, SmartBubbleSortTest, BinarySearchTreeTest, DoubleLinkedListTest, LinkedListTest, QueueTest, StackTest">-->
+        <!--<junitreport todir="${junit.output.dir}">-->
+            <!--<fileset dir="${junit.output.dir}">-->
+                <!--<include name="TEST-*.xml"/>-->
+            <!--</fileset>-->
+            <!--<report format="frames" todir="${junit.output.dir}"/>-->
+        <!--</junitreport>-->
+    <!--</target>-->
+
+</project>
