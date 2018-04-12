@@ -21,31 +21,31 @@ public class Library
     }
     
     public boolean selectUserByName(String name){
-        return false;
+        return userControl.selectByName(name);
     }
 
     public String getSelectedUserName(){
-        return null;
+        return userControl.getSelectedUserName();
     }
     
     public String getLoggedInUserName(){
-        return null;
+        return userControl.getLoggedInUserName();
     }
     
     public boolean login(String name, String password){
-        return false;
+        return userControl.login(name, password);
     }
     
     public boolean createUser(String role, String name, String password){
-        return false;
+        return userControl.createUser(role,name,password);
     }
     
     public boolean registerUser(String name, String password){
-        return false;
+        return userControl.createUser("Member",name,password);
     }
     
-    public void deleteSelectedUser(){
-        
+    public boolean deleteSelectedUser(){
+        return userControl.deleteSelected();
     }
     
     public void getAllPaidBorrows(){
