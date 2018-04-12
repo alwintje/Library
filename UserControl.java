@@ -17,22 +17,38 @@ public class UserControl
     public UserControl()
     {
         users = new ArrayList<User>();
+        selectedUser = null;
+        loggedInUser = null;
     }
     
     public boolean createUser(String Role, String name, String password){
+        users.add(new Employee("Name","Password"));
+        return true;
+    }
+    
+    public boolean selectByName(String string){
+        for(User user :  users){
+            if (user.getName().equals(string)){
+                selectedUser = user;
+                return true;
+            }
+        }
         return false;
     }
     
-    public void selectByName(String string){
-        
-    }
-    
     public boolean Login(String name, String password){
+        for(User user :  users){
+            if (user.getName().equals(name) && user.getPassword().equals(password)){
+                loggedInUser = user;
+                return true;
+            }
+        }
         return false;
     }
     
     public boolean Logout(){
-        return false;
+        loggedInUser = null;
+        return true;
     }
     
     public User getLoggedInUser(){
@@ -43,7 +59,7 @@ public class UserControl
         return selectedUser;
     }
     
-    public boolean GetSelectedUserName(){
+    public String GetSelectedUserName(){
         return selectedUser.getName();
     }
     
@@ -52,13 +68,13 @@ public class UserControl
         return true;
     }
     
-    public boolean SetSelectedUserPassword(String name){
-        selectedUser.setPassword(name);
+    public boolean SetSelectedUserPassword(String password){
+        selectedUser.setPassword(password);
         return true;
     }
     
     public Boolean DeleteSelected(){
-        return false;
+        return users.remove(selectedUser);
     }
     
     
