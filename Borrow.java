@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 /**
  * Write a description of class borrow here.
  *
@@ -18,9 +19,12 @@ public class Borrow
     private boolean paid;
     private boolean returned;
     
-    public Borrow()
+    public Borrow(User user, Date startDate, Date endDate, Item item)
     {
-        
+        this.user = user;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.item =item;
     }
 
     public User getUser(){
@@ -35,7 +39,27 @@ public class Borrow
         return endDate;
     }
     
-    public int calculatePrice(){
-        return null;
+    private static long getDateDiff(Date date1, Date date2) {
+        long diffInMillies = date2.getTime() - date1.getTime();
+        TimeUnit timeUnit =TimeUnit.DAYS;;
+        return timeUnit.convert(diffInMillies,TimeUnit.DAYS);
+    }
+    
+    public double calculatePrice(){
+        Category category = item.getCategory();
+       
+        double price;
+        
+        long daysborrowedLong = getDateDiff(startDate, endDate);
+        int daysborrowed = (int) daysborrowedLong;
+        if(daysborrowed < category.getBorrowDaysLimit()){
+            price = category.getPrice();
+            return price;
+        }
+        else{
+            int daysLate = daysborrowed - category.getBorrowDaysLimit();
+            price = category.getPrice() + ((daysLate/category.getPenaltyDaysPeriod()) * category.getPenaltyPeriodPrice());
+            return price;
+        }
     }
 }
