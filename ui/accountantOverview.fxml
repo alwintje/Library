@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="71.0" prefWidth="960.0" style="-fx-background-color: #b2d7ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Boetes overzicht" textAlignment="CENTER" wrappingWidth="960.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#464646" layoutX="21.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <TableView layoutX="68.0" layoutY="145.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Jaar" />
+          <TableColumn prefWidth="124.0" text="Totaal bedrag" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="71.0" prefWidth="960.0" style="-fx-background-color: #b2d7ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reserveren" textAlignment="CENTER" wrappingWidth="960.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#464646" layoutX="21.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Button layoutX="71.0" layoutY="250.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Zoeken" />
+      <TextField layoutX="71.0" layoutY="211.0" />
+      <Text layoutX="71.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zoeken:" wrappingWidth="187.0">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text layoutX="362.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gevonden items:" wrappingWidth="187.0">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <ScrollPane layoutX="362.0" layoutY="170.0" prefHeight="200.0" prefWidth="200.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <ScrollPane layoutX="682.0" layoutY="170.0" prefHeight="200.0" prefWidth="200.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <Text layoutX="682.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uw reserveringen:" wrappingWidth="187.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="71.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zoekterm:" wrappingWidth="187.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="71.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aantal dagen:" wrappingWidth="187.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField layoutX="71.0" layoutY="350.0" />
+      <Button layoutX="71.0" layoutY="389.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Toevoegen" />
+      <Button layoutX="695.0" layoutY="470.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Afronden" />
+   </children>
+</AnchorPane>
