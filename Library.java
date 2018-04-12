@@ -96,19 +96,15 @@ public class Library
         return false;
     }
     
-    public boolean createBook(String title, String author, String publisher, String categorie){
+    public boolean createBook(String category, String title, String author, String publisher, String categorie){
         
     }
     
-    public boolean createCD(String title, String singer, String categorie){
+    public boolean createCD(String category, String title, String singer, String categorie){
         
     }
     
-    public boolean createDVD(String title, String director, String categorie){
-        
-    }
-    
-    public boolean createUser(String name, String password){
+    public boolean createDVD(String category, String title, String director, String categorie){
         
     }
 }

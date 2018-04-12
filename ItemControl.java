@@ -32,12 +32,18 @@ public class ItemControl
         
     }
     
-    public boolean SelectType(String title){
-        
+    public boolean SelectType(String type){
+        this.selectedType = type;
     }
     
     public boolean SelectByName(String title){
-        
+        for(Item item :  items){
+            if (item.getTitle().equals(title)){
+                selectedItem = item;
+                return true;
+            }
+        }
+        return false;
     }
     
     public boolean SelectNext(){
