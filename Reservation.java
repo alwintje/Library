@@ -1,4 +1,4 @@
-
+import java.util.Date;
 /**
  * Write a description of class Reservation here.
  *
@@ -9,26 +9,47 @@ public class Reservation
 {
     // instance variables - replace the example below with your own
     private User user;
-    private Date date;
+    private Date endDate;
+    private Item item;
+    private double reservationPrice;
     
     /**
      * Constructor for objects of class Reservation
      */
     public Reservation()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public void setUser(User user){
+        this.user = user;
+    }
+    
+    public void setEndDate(Date date){
+        this.endDate = date;
+    }
+    
+    public void setItem(Item item){
+        this.item = item;
+    }
+    
+    public void setReservationPrice(double price){
+        this.reservationPrice = price;
+    }
+    
+    public User getUser(){
+        return user;
+    }
+    
+    public Date getEndDate(){
+        return endDate;
+    }
+    
+    public Item getItem(){
+        return item;
+    }
+    
+    public double getReservationPrice(){
+        return reservationPrice;
     }
 }
