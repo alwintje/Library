@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=CategoryFactory
+comment0.text=\r\n\r\n\ @author\ Group\ 10\r\n\ @version\ 1\r\n
+comment1.params=
+comment1.target=CategoryFactory()
+comment2.params=category
+comment2.target=Category\ getCategorie(java.lang.String)
+numComments=3

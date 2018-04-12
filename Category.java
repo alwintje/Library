@@ -1,33 +1,58 @@
 
 /**
- * Write a description of class Category here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Group 10
+ * @version 1
  */
-public class Category
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class Category {
+    private String name;
+    private Double price;
+    private double penaltyPeriodPrice;
+    private int penaltyDaysPeriod;
+    private int borrowDaysLimit;
 
-    /**
-     * Constructor for objects of class Category
-     */
-    public Category()
-    {
-        // initialise instance variables
-        x = 0;
+
+    public Category(String name, double price) {
+        this.name = name;
+        this.price = price;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public double getPenaltyPeriodPrice() {
+        return penaltyPeriodPrice;
+    }
+
+    public void setPenaltyPeriodPrice(double price) {
+        this.penaltyPeriodPrice = price;
+    }
+
+    public int getPenaltyDaysPeriod() {
+        return penaltyDaysPeriod;
+    }
+
+    public void setPenaltyDaysPeriod(int period) {
+        this.penaltyDaysPeriod = period;
+    }
+
+    public int getBorrowDaysLimit() {
+        return borrowDaysLimit;
+    }
+
+    public void setBorrowDaysLimit(int limit) {
+        this.borrowDaysLimit = limit;
     }
 }
