@@ -47,11 +47,19 @@ public class ItemControl
     }
     
     public boolean SelectNext(){
-        
+        boolean found = false;
+        for(Item item :  items){
+            if (item == selectedItem && found == false){
+                found = true;
+            }else if(found = true){
+                selectedItem = item;
+            }
+        }
+        return false;
     }
     
     public boolean deleteSelected(){
-        return false;
+        return items.remove(selectedItem);
     }
     
     public boolean borrowSelected(User user){
@@ -63,15 +71,17 @@ public class ItemControl
     }
     
     public String addItem(Item item){
+        items.add(item);
         return null;
     }
     
-    public boolean setTitle(){
+    public boolean setTitle(String title){
+        selectedItem.setTitle(title);
         return false;
     }
     
-    public boolean setCategory(){
-        return false;
+    public boolean setCategory(String title){
+        item.setCategory();
     }
     
     private String getBorrowList(){
