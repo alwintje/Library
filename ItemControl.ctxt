@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=ItemControl
+comment1.params=
+comment1.target=ItemControl()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ItemControl\r\n
+comment2.params=
+comment2.target=java.util.ArrayList\ getAllPenalties()
+comment3.params=title
+comment3.target=void\ SelectByName(java.lang.String)
+comment4.params=
+comment4.target=void\ SelectNext()
+comment5.params=
+comment5.target=boolean\ deleteSelected()
+comment6.params=user
+comment6.target=boolean\ borrowSelected(User)
+comment7.params=
+comment7.target=java.lang.String\ reservateSelected()
+comment8.params=item
+comment8.target=java.lang.String\ addItem(Item)
+comment9.params=
+comment9.target=boolean\ setTitle()
+numComments=10

@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Acountant
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Acountant\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=name\ password
+comment1.target=Acountant(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ PrintOverview()
+comment3.params=
+comment3.target=void\ sortFamilyName()
+comment4.params=
+comment4.target=void\ sortDateOfPay()
+comment5.params=
+comment5.target=void\ sortPrice()
+comment6.params=
+comment6.target=void\ getPaidPanalties()
+numComments=7
