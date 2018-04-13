@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="71.0" prefWidth="960.0" style="-fx-background-color: #b2d7ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item bewerken" textAlignment="CENTER" wrappingWidth="960.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#464646" layoutX="10.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Text layoutX="85.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zoeken" wrappingWidth="187.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField layoutX="85.0" layoutY="163.0" />
+      <Text layoutX="85.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gevonden items" wrappingWidth="187.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="85.0" layoutY="371.0" prefHeight="111.0" prefWidth="220.0" />
+      <Button layoutX="85.0" layoutY="215.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Zoeken" />
+      <Button layoutX="713.0" layoutY="446.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Item toevoegen" />
+      <Button layoutX="394.0" layoutY="482.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Opslaan" />
+      <TextField layoutX="387.0" layoutY="165.0" />
+      <Text layoutX="387.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item" wrappingWidth="187.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="387.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titel:" wrappingWidth="187.0" />
+      <Text layoutX="387.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="187.0" />
+      <TextField layoutX="387.0" layoutY="242.0" />
+      <Text layoutX="387.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categorie:" wrappingWidth="187.0" />
+      <RadioButton layoutX="387.0" layoutY="319.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="Romans - Boeken" />
+      <RadioButton layoutX="387.0" layoutY="343.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="Studie - Boeken" />
+      <RadioButton layoutX="387.0" layoutY="368.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="Populair - CD" />
+      <RadioButton layoutX="387.0" layoutY="392.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="Klassiek - CD" />
+      <RadioButton layoutX="387.0" layoutY="416.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="A-film - DVD" />
+      <RadioButton layoutX="387.0" layoutY="441.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="B-film - DVD" />
+      <Button layoutX="713.0" layoutY="488.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Item verwijderen" />
+      <Text layoutX="85.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zoekterm:" wrappingWidth="187.0" />
+   </children>
+</AnchorPane>

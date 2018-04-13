@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="71.0" prefWidth="960.0" style="-fx-background-color: #b2d7ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item toevoegen" textAlignment="CENTER" wrappingWidth="960.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Text layoutX="85.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gegevens" wrappingWidth="187.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField layoutX="85.0" layoutY="169.0" />
+      <Text layoutX="664.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nieuwe items" wrappingWidth="187.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="387.0" layoutY="345.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Toevoegen" />
+      <Text layoutX="85.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titel:" wrappingWidth="187.0" />
+      <Text layoutX="85.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="187.0" />
+      <TextField layoutX="85.0" layoutY="239.0" />
+      <ScrollPane layoutX="664.0" layoutY="170.0" prefHeight="200.0" prefWidth="200.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="226.0" prefWidth="188.0" />
+        </content>
+      </ScrollPane>
+      <RadioButton layoutX="387.0" layoutY="305.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="B-film - DVD" />
+      <RadioButton layoutX="387.0" layoutY="280.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="A-film - DVD" />
+      <RadioButton layoutX="387.0" layoutY="256.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="Klassiek - CD" />
+      <RadioButton layoutX="387.0" layoutY="232.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="Populair - CD" />
+      <RadioButton layoutX="387.0" layoutY="207.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="Studie - Boeken" />
+      <RadioButton layoutX="387.0" layoutY="183.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="Romans - Boeken" />
+      <Text layoutX="387.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categorie:" wrappingWidth="187.0" />
+   </children>
+</AnchorPane>

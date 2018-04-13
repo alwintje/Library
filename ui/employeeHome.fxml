@@ -14,6 +14,11 @@
                   <Font size="24.0" />
                </font>
             </Text>
+            <Text fill="#464646" layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
       <Button layoutX="92.0" layoutY="128.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Item toevoegen" />
