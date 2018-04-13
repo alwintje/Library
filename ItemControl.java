@@ -1,6 +1,8 @@
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.time.LocalDate;
+import java.time.ZoneId;
 
 public class ItemControl
 {
@@ -36,7 +38,7 @@ public class ItemControl
         
     }
     
-    public boolean SelectType(String type){
+    public void SelectType(String type){
         this.selectedType = type;
     }
     
@@ -84,7 +86,7 @@ public class ItemControl
         return false;
     }
     
-    public boolean setCategory(String categorie){
+    public void setCategory(String categorie){
         selectedItem.setCategory(categoryFactory.getCategorie(categorie));
     }
     
@@ -94,6 +96,16 @@ public class ItemControl
     
     private Date getNextAvailableDate(Item item){
         return new Date();
+    }
+    
+    private void deleteReservation(){
+        LocalDate localDate = LocalDate.now();
+        Date todayDate =  Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());;
+        for(Reservation reservation : reservations){
+            if(todayDate.after(reservation.getEndDate())) {
+               reservation = null;
+            }
+        }
     }
 }
 
