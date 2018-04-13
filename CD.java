@@ -25,7 +25,7 @@ public class CD extends Item
         this.artist = artist;
     }
 
-    public Date setDate(Date date){
+    public void setDate(Date date){
         this.date = date;
     }
 

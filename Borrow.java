@@ -25,7 +25,7 @@ public class Borrow
     {
         this.user = user;
         this.startDate = startDate;
-        this.item =item;
+        this.item = item;
         this.endDate = addDays(startDate, category.getBorrowDaysLimit());
     }  
     
@@ -41,10 +41,6 @@ public class Borrow
         return user;
     }
     
-    public void setStartDate(Date startDate){
-       this.startDate = startDate;
-    }
-    
     public Date getStartDate(){
         return startDate;
     }
@@ -52,7 +48,9 @@ public class Borrow
     public Date getEndDate(){
         return endDate;
     }
-    
+    public Item getItem(){
+        return this.item;
+    }
     private static long getDateDiff(Date date1, Date date2) {
         long diffInMillies = date2.getTime() - date1.getTime();
         TimeUnit timeUnit =TimeUnit.DAYS;;
@@ -72,5 +70,9 @@ public class Borrow
             price = category.getPrice() + ((daysLate/category.getPenaltyDaysPeriod()) * category.getPenaltyPeriodPrice());
             return price;
         }
+    }
+    
+    public String getString(){
+        return this.user.getName() + " - " + this.item.getTitle();
     }
 }

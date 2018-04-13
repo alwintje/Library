@@ -34,17 +34,23 @@ public class ItemControl
 
     public ArrayList<Borrow> getAllPenalties(){
         return penalties;
-    }
-    
-    public String[] penaltiesOverview(String sort){
         
     }
     
-    public void SelectType(String type){
+    public ArrayList<String> penaltiesOverview(String sort){
+        ArrayList<String> list = new ArrayList<>(penalties.size());
+        // Need sort functionality
+        for(Borrow b : penalties){
+            list.add(b.getString());
+        }
+        return list;
+    }
+    
+    public void selectType(String type){
         this.selectedType = type;
     }
     
-    public boolean SelectByName(String title){
+    public boolean selectByName(String title){
         for(Item item :  items){
             if (item.getTitle().equals(title)){
                 selectedItem = item;
@@ -54,38 +60,53 @@ public class ItemControl
         return false;
     }
     
-    public boolean SelectNext(){
+    public boolean selectNext(){
         boolean found = false;
         for(Item item :  items){
             if (item == selectedItem && found == false){
                 found = true;
-            }else if(found = true){
+            }else if(found == true){
                 selectedItem = item;
+                return true;
             }
         }
         return false;
     }
     
     public boolean deleteSelected(){
+        if( selectedItem == null ) return false;
         return items.remove(selectedItem);
     }
     
     public boolean borrowSelected(User user){
+        if(selectedItem == null) return false;
         LocalDate localDate = LocalDate.now();
         Date todayDate =  Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-        int oldSize = borrowed.size();
-        borrowed.add(new Borrow(user, todayDate, selectedItem));
-        if(oldSize +1 == borrowed.size()){
-            return true;
+        
+        //borrowed = new ArrayList<Borrow>();
+        //reservations
+        for(Reservation r : reservations){
+            if(r.getItem().equals(selectedItem)){
+                if(todayDate.before(r.getEndDate())){
+                    return false;
+                }
+            }
         }
-        else{
-            return false;
+        for(Borrow b : borrowed){
+            if(b.getItem().equals(selectedItem)){
+                if(todayDate.before(b.getEndDate())){
+                    return false;
+                }
+            }
         }
+        return borrowed.add(new Borrow(user, todayDate, selectedItem));
+        
     }
     
-    public String reservateSelected(){
+    public String reservateSelected(User user){
+        if(selectedItem == null) return "No item selected";
         
-        return null;
+        return "Not implemented yet";
     }
     
     public String addItem(Item item){
@@ -98,8 +119,8 @@ public class ItemControl
         return false;
     }
     
-    public void setCategory(String category){
-        selectedItem.setCategory(categoryFactory.getCategorie(category));
+    public void setCategory(String categorie){
+        selectedItem.setCategory(categoryFactory.getCategorie(categorie));
     }
     
     public ArrayList<Borrow> getBorrowList(){
@@ -129,6 +150,33 @@ public class ItemControl
                reservation = null;
             }
         }
+    }
+    
+    public boolean createBook(String category, String title, String author, String publisher){
+        Book b = new Book(title);
+        b.setCategory(categoryFactory.getCategorie(category));
+        b.setAuthor(author);
+        b.setPublisher(publisher);
+        this.addItem(b);
+        return true;
+    }
+    
+    public boolean createCD(String category, String title, String singer){
+        CD cd = new CD(title);
+        cd.setCategory(categoryFactory.getCategorie(category));
+        cd.setArtist(singer);
+        
+        LocalDate localDate = LocalDate.now();
+        Date todayDate =  Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        cd.setDate(todayDate);
+        return true;
+    }
+    
+    public boolean createDVD(String category, String title, String director){
+        DVD dvd = new DVD(title);
+        dvd.setCategory(categoryFactory.getCategorie(category));
+        dvd.setDirector(director);
+        return false;
     }
 }
 

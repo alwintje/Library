@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  *
@@ -8,9 +9,11 @@ import java.util.HashMap;
 public class CategoryFactory
 {
     private HashMap<String, Category> categories;
-
+    
     public CategoryFactory()
     {
+        
+        categories = new HashMap();
         Category roman = new Category("Roman", 0);
             roman.setPenaltyDaysPeriod(1);
             roman.setPenaltyPeriodPrice(0.25);
@@ -43,6 +46,10 @@ public class CategoryFactory
 
         categories.put(roman.getName().toLowerCase(), roman);
         categories.put(study.getName().toLowerCase(), study);
+        categories.put(aFilm.getName().toLowerCase(), aFilm);
+        categories.put(bFilm.getName().toLowerCase(), bFilm);
+        categories.put(classic.getName().toLowerCase(), classic);
+        categories.put(populair.getName().toLowerCase(), populair);
     }
 
     public Category getCategorie(String category) {

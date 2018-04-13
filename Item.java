@@ -15,11 +15,10 @@ public abstract class Item
     /**
      * Constructor for objects of class Item
      */
-    public Item(String title, Category category)
+    public Item(String title)
     {
         this.title = title;
         this.id = generateString();
-        this.category = category;
     }
     
     private static String generateString() {

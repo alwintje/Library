@@ -53,11 +53,12 @@ public class Library
     }
     
     public String selectTypeByName(String type){
-        return null;
+        itemControl.selectType(type);
+        return "Done";
     }
     
-    public String selectitemByName(String title){
-        return null;
+    public String selectItemByName(String title){
+        return itemControl.selectByName(title) ? "Done" : "Can't select item";
     }
     
     public String selectitemByID(String id){
@@ -96,18 +97,18 @@ public class Library
         return false;
     }
     
-    public boolean createBook(String category, String title, String author, String publisher, String categorie){
-        Book b = new Book(); 
-        itemControl.addItem();
+    public boolean createBook(String category, String title, String author, String publisher){
+        return itemControl.createBook(category, title, author, publisher);
     }
     
-    public boolean createCD(String category, String title, String singer, String categorie){
-        return false;
+    public boolean createCD(String category, String title, String singer){
+        return itemControl.createCD(category, title, singer);
     }
     
-    public boolean createDVD(String category, String title, String director, String categorie){
-        return false;
+    public boolean createDVD(String category, String title, String director){
+        return itemControl.createDVD(category, title, director);
     }
+    
 }
 
 
