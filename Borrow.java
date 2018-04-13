@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+import java.util.Calendar;
 /**
  * Write a description of class borrow here.
  *
@@ -14,19 +15,28 @@ public class Borrow
     private Date endDate;
     
     private Item item; 
+    Category category = item.getCategory();
     private int numberOfWarnings; 
     
     private boolean paid;
     private boolean returned;
     
-    public Borrow(User user, Date startDate, Date endDate, Item item)
+    public Borrow(User user, Date startDate, Item item)
     {
         this.user = user;
         this.startDate = startDate;
-        this.endDate = endDate;
         this.item =item;
+        this.endDate = addDays(startDate, category.getBorrowDaysLimit());
+    }  
+    
+    private Date addDays(Date date, int days)
+    {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, days); //minus number would decrement the days
+        return cal.getTime();
     }
-
+    
     public User getUser(){
         return user;
     }
@@ -46,10 +56,7 @@ public class Borrow
     }
     
     public double calculatePrice(){
-        Category category = item.getCategory();
-       
-        double price;
-        
+        double price;        
         long daysborrowedLong = getDateDiff(startDate, endDate);
         int daysborrowed = (int) daysborrowedLong;
         if(daysborrowed < category.getBorrowDaysLimit()){
