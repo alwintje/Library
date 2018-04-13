@@ -97,15 +97,16 @@ public class Library
     }
     
     public boolean createBook(String category, String title, String author, String publisher, String categorie){
-        
+        Book b = new Book(); 
+        itemControl.addItem();
     }
     
     public boolean createCD(String category, String title, String singer, String categorie){
-        
+        return false;
     }
     
     public boolean createDVD(String category, String title, String director, String categorie){
-        
+        return false;
     }
 }
 

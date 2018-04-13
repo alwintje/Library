@@ -16,22 +16,23 @@ public class CD extends Item
     /**
      * Constructor for objects of class Item
      */
-    public CD(String title, Category category, String artist)
+    public CD(String title)
     {
-        super(title, category);
-        this.artist = artist;
-        this.date = new Date();
-        sdf.format(date);
+        super(title);
     }
 
     public void setArtist(String artist){
         this.artist = artist;
     }
-    
+
+    public Date setDate(Date date){
+        this.date = date;
+    }
+
     public String getArtist(){
         return artist;
     }
-    
+
     public Date getDate(){
         return date;
     }
