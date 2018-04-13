@@ -4,3 +4,5 @@ appliction/*
 !appliction/src
 !appliction/build.xml
 Library.iml
+*.class
+*.ctxt
