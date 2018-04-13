@@ -9,7 +9,7 @@
    <children>
       <Pane prefHeight="71.0" prefWidth="960.0" style="-fx-background-color: #b2d7ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Items lenen" textAlignment="CENTER" wrappingWidth="960.0">
+            <Text layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Items inleveren" textAlignment="CENTER" wrappingWidth="960.0">
                <font>
                   <Font size="24.0" />
                </font>
@@ -21,15 +21,15 @@
             </Text>
          </children>
       </Pane>
-      <Button layoutX="71.0" layoutY="270.0" mnemonicParsing="false" onAction="#userBorrowAddItem" prefHeight="31.0" prefWidth="187.0" text="Toevoegen" />
-      <Button layoutX="71.0" layoutY="319.0" mnemonicParsing="false" onAction="#userFinishBorrowItems" prefHeight="31.0" prefWidth="187.0" text="Afronden" />
+      <Button layoutX="71.0" layoutY="270.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Toevoegen" />
+      <Button layoutX="71.0" layoutY="319.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Afronden" />
       <TextField layoutX="71.0" layoutY="189.0" />
       <Text layoutX="71.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voer ID in" wrappingWidth="187.0" />
       <ScrollPane layoutX="667.0" layoutY="189.0" prefHeight="200.0" prefWidth="200.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="190.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="183.0" />
         </content>
       </ScrollPane>
-      <Text layoutX="667.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uw items" wrappingWidth="187.0" />
+      <Text layoutX="667.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingeleverde items" wrappingWidth="187.0" />
    </children>
 </AnchorPane>

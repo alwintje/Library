@@ -16,8 +16,8 @@
             </Text>
          </children>
       </Pane>
-      <Button layoutX="387.0" layoutY="206.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Items inleveren" />
-      <Button layoutX="387.0" layoutY="255.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Items lenen" />
-      <Button layoutX="387.0" layoutY="300.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="187.0" text="Reserveren" />
+      <Button layoutX="387.0" layoutY="206.0" mnemonicParsing="false" onAction="#userHomeItemsDeposit" prefHeight="31.0" prefWidth="187.0" text="Items inleveren" />
+      <Button layoutX="387.0" layoutY="255.0" mnemonicParsing="false" onAction="#userHomeItemsBorrow" prefHeight="31.0" prefWidth="187.0" text="Items lenen" />
+      <Button layoutX="387.0" layoutY="300.0" mnemonicParsing="false" onAction="#userHomeReservate" prefHeight="31.0" prefWidth="187.0" text="Reserveren" />
    </children>
 </AnchorPane>
