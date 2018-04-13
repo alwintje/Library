@@ -16,9 +16,12 @@ public class Reservation
     /**
      * Constructor for objects of class Reservation
      */
-    public Reservation()
+    public Reservation(User user, Date date, Item item, double price)
     {
-        
+        this.user = user;
+        this.endDate = date;
+        this.item = item;
+        this.reservationPrice = price;
     }
     
     public void setUser(User user){
