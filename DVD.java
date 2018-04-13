@@ -14,10 +14,9 @@ public class DVD extends Item
     /**
      * Constructor for objects of class Item
      */
-    public DVD(String title, Category category, String director)
+    public DVD(String title)
     {
-        super(title, category);
-        this.director = director;
+        super(title);
     }
 
     public void setDirector(String director){

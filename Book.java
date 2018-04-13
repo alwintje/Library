@@ -14,12 +14,9 @@ public class Book extends Item
     /**
      * Constructor for objects of class Item
      */
-    public Book(String title, Category category, String author, String publisher)
+    public Book(String title)
     {
-        super(title, category);
-        
-        this.author = author;
-        this.publisher = publisher;
+        super(title);
     }
 
     public void setAuthor(String author){
