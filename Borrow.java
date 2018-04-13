@@ -41,6 +41,10 @@ public class Borrow
         return user;
     }
     
+    public void setStartDate(Date startDate){
+       this.startDate = startDate;
+    }
+    
     public Date getStartDate(){
         return startDate;
     }

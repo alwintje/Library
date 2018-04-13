@@ -98,8 +98,8 @@ public class ItemControl
         return false;
     }
     
-    public void setCategory(String categorie){
-        selectedItem.setCategory(categoryFactory.getCategorie(categorie));
+    public void setCategory(String category){
+        selectedItem.setCategory(categoryFactory.getCategorie(category));
     }
     
     public ArrayList<Borrow> getBorrowList(){
