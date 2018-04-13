@@ -16,6 +16,8 @@ public class ItemControl
     
     private String selectedType;
     private Item selectedItem;
+    
+    
     /**
      * Constructor for objects of class ItemControl
      */
@@ -69,10 +71,20 @@ public class ItemControl
     }
     
     public boolean borrowSelected(User user){
-        return false;
+        LocalDate localDate = LocalDate.now();
+        Date todayDate =  Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        int oldSize = borrowed.size();
+        borrowed.add(new Borrow(user, todayDate, selectedItem));
+        if(oldSize +1 == borrowed.size()){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     
-    public String reservateSelected(User user){
+    public String reservateSelected(){
+        
         return null;
     }
     
@@ -90,17 +102,28 @@ public class ItemControl
         selectedItem.setCategory(categoryFactory.getCategorie(categorie));
     }
     
-    private String getBorrowList(){
-        return null;
+    public ArrayList<Borrow> getBorrowList(){
+        return borrowed;
     }
     
     private Date getNextAvailableDate(Item item){
-        return new Date();
+        LocalDate localDate = LocalDate.now();
+        Date todayDate =  Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date availableDate = todayDate;
+        for(Reservation reservation : reservations){
+            Item reservationItem = reservation.getItem();
+            if(reservationItem.getId() == item.getId()){
+                if(availableDate.after(reservation.getEndDate()))
+                availableDate = reservation.getEndDate();
+            }
+        }
+        
+        return availableDate;
     }
     
     private void deleteReservation(){
         LocalDate localDate = LocalDate.now();
-        Date todayDate =  Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());;
+        Date todayDate =  Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
         for(Reservation reservation : reservations){
             if(todayDate.after(reservation.getEndDate())) {
                reservation = null;
